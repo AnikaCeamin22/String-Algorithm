@@ -4,6 +4,10 @@ using namespace std;
 using ll =  long long int;
 #define en  "\n"
 
+//https://www.youtube.com/watch?v=qases-9gOpk&t=9s
+//https://www.youtube.com/watch?v=sODA1BzFvsE
+//https://www.youtube.com/watch?v=6gQR8TaFXMw
+
 void computeLPS(string& p, vector<int>& LPS, int m)
 {
         int len=0,i=1;
