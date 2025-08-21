@@ -5,6 +5,9 @@ using ll = long long int;
 #define en  "\n"
 
 // Z Function=longest substring starting at i which is also prefix of the string
+// https://www.youtube.com/watch?v=6mzNnEGimPA
+// https://www.youtube.com/watch?v=USn1aRaKnJo&list=PLl4Y2XuUavmuEzOKhnLQIRTtI2SMtWini&index=7
+// https://cp-algorithms.com/string/z-function.html
 
 vector<int>Z_function(string s)
 {
@@ -14,13 +17,13 @@ vector<int>Z_function(string s)
     for(int i=1; i<n; i++)
     {
         if(i<r)   // i between l and r
-            z[i]=min(r-i,z[i-l]);
+            z[i]=min(r-i+1,z[i-l]);
         while(i+z[i]<n && s[z[i]]==s[i+z[i]]) // random checking
             z[i]++;
-        if(z[i]+i>r) // set new right most substring
+        if(z[i]+i-1>r) // set new right most substring
         {
             l=i;
-            r=z[i]+i;
+            r=z[i]+i-1;
         }
     }
     return z;
@@ -53,4 +56,5 @@ int main()
 
     return 0;
 }
+
 
